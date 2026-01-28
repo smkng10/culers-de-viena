@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culers de Viena | Offizielle Website</title>
+    <style>
+        :root {
+            --barca-blue: #004D98;
+            --barca-red: #A50044;
+            --barca-gold: #EDBB00;
+            --white: #ffffff;
+            --dark: #1a1a1a;
+        }
+
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; background: #0e0e0e; color: var(--white); overflow-x: hidden; }
+
+        /* Navigation */
+        nav {
+            background: rgba(0,0,0,0.9);
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--barca-gold);
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        nav a:hover { color: var(--barca-gold); }
+
+        /* Sektionen */
+        .page { display: none; padding: 40px 20px; animation: fadeIn 0.5s; }
+        .active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Home / Logo Bereich */
+        .hero { text-align: center; padding: 60px 20px; }
+        .main-logo { width: 100%; max-width: 500px; border-radius: 15px; box-shadow: 0 0 30px rgba(237, 187, 0, 0.3); }
+
+        /* Content Boxen */
+        .container { max-width: 900px; margin: auto; background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px; }
+        
+        .founder-img { width: 100%; max-width: 600px; border-radius: 10px; border: 3px solid var(--barca-blue); }
+        .rules-img { width: 100%; max-width: 500px; border: 2px solid var(--barca-gold); border-radius: 10px; }
+
+        h2 { color: var(--barca-gold); text-transform: uppercase; font-size: 2rem; }
+        p { line-height: 1.6; font-size: 1.1rem; }
+
+        footer { text-align: center; padding: 40px; font-size: 0.9rem; color: #888; }
+
+        /* Button */
+        .btn-insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); 
+                     color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a onclick="showPage('home')">Home</a>
+    <a onclick="showPage('about')">Über uns</a>
+    <a onclick="showPage('matchday')">Matchday</a>
+</nav>
+
+<section id="home" class="page active">
+    <div class="hero">
+        <img src="Logo.jpg" alt="Culers de Viena Logo" class="main-logo">
+        <h2>Passió Blaugrana a Viena</h2>
+        <p>Més que ein Fanclub. Willkommen bei der Community des FC Barcelona in Wien.</p>
+    </div>
+</section>
+
+<section id="about" class="page">
+    <div class="container">
+        <h2>Unsere Geschichte</h2>
+        <img src="Founders.jpg" alt="Die Gründer" class="founder-img">
+        <p>Drei Gründer, eine Vision: Den FC Barcelona in die Herzen Wiens zu bringen. Seit Sommer 2025 haben wir aus einer Idee Realität gemacht.</p>
+        <p>Was als kleiner Kreis begann, ist heute ein anerkannter Treffpunkt für Culers aus der ganzen Welt. Wir stehen für Gemeinschaft, Leidenschaft und die Liebe zum Verein.</p>
+    </div>
+</section>
+
+<section id="matchday" class="page">
+    <div class="container">
+        <h2>Matchday im Pointers</h2>
+        <p>Unser Zuhause ist das <strong>Pointers Pub & Kitchen</strong>. Damit jeder Spieltag für alle ein Fest wird, gelten unsere Regeln:</p>
+        <img src="Regeln.jpg" alt="7 Goldene Regeln" class="rules-img">
+        <br><br>
+        <a href="https://www.instagram.com/culersdeviena" class="btn-insta" target="_blank">Aktuelle Spieltermine auf Instagram</a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Culers de Viena | Visca el Barça!</p>
+</footer>
+
+<script>
+    function showPage(pageId) {
+        // Alle Seiten verstecken
+        const pages = document.querySelectorAll('.page');
+        pages.forEach(p => p.classList.remove('active'));
+        
+        // Gewählte Seite zeigen
+        document.getElementById(pageId).classList.add('active');
+        
+        // Scroll nach oben
+        window.scrollTo(0,0);
+    }
+</script>
+
+</body>
+</html>
